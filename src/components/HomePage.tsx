@@ -1,4 +1,5 @@
 import React from 'react';
+import Marquee from 'react-fast-marquee';
 
 const Homepage: React.FC = () => {
   return (
@@ -9,7 +10,7 @@ const Homepage: React.FC = () => {
           <div className="flex justify-between items-start">
             {/* Logo and Title */}
             <div className="flex-1">
-              <h1 className="text-4xl font-bold text-black mb-8 leading-tight">
+              <h1 className="flex justify-start text-left text-4xl font-bold text-black mb-8 leading-tight">
                 PROFESSIONAL<br />
                 EVENT PLANNER
               </h1>
@@ -147,7 +148,7 @@ const Homepage: React.FC = () => {
         </div>
 
         {/* Red CTA Section */}
-        <div className="bg-red-600 text-white p-8 rounded-lg text-center">
+        <div className="bg-red-600 text-white p-8 rounded-lg text-center mb-16">
           <p className="text-lg mb-6 max-w-4xl mx-auto leading-relaxed">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
             Lorem Ipsum has been the industry's standard dummy text ever since the 
@@ -157,6 +158,39 @@ const Homepage: React.FC = () => {
             Fix your Event now
           </button>
         </div>
+
+        {/* Client Logo Slider Section */}
+        <section className="py-12 bg-gray-50 -mx-8 px-8 rounded-lg">
+          <div className="space-y-8">
+            {/* First marquee - left to right with 10 logos */}
+            <Marquee speed={50}>
+              <img src="logo1.jpg" alt="Logo 1" style={{width: '120px', height: '60px', marginRight: '40px'}} />
+              <img src="logo2.jpg" alt="Logo 2" style={{width: '120px', height: '60px', marginRight: '40px'}} />
+              <img src="logo3.jpg" alt="Logo 3" style={{width: '120px', height: '60px', marginRight: '40px'}} />
+              <img src="logo4.jpg" alt="Logo 4" style={{width: '120px', height: '60px', marginRight: '40px'}} />
+              <img src="logo5.jpg" alt="Logo 5" style={{width: '120px', height: '60px', marginRight: '40px'}} />
+              <img src="logo6.jpg" alt="Logo 6" style={{width: '120px', height: '60px', marginRight: '40px'}} />
+              <img src="logo7.jpg" alt="Logo 7" style={{width: '120px', height: '60px', marginRight: '40px'}} />
+              <img src="logo8.jpg" alt="Logo 8" style={{width: '120px', height: '60px', marginRight: '40px'}} />
+              <img src="logo9.jpg" alt="Logo 9" style={{width: '120px', height: '60px', marginRight: '40px'}} />
+              <img src="logo10.jpg" alt="Logo 10" style={{width: '120px', height: '60px', marginRight: '40px'}} />
+            </Marquee>
+            
+            {/* Second marquee - right to left with 10 logos */}
+            <Marquee direction="right" speed={30} pauseOnHover={true}>
+              <img src="logo11.jpg" alt="Logo 11" style={{width: '120px', height: '60px', marginRight: '40px'}} />
+              <img src="logo12.jpg" alt="Logo 12" style={{width: '120px', height: '60px', marginRight: '40px'}} />
+              <img src="logo13.jpg" alt="Logo 13" style={{width: '120px', height: '60px', marginRight: '40px'}} />
+              <img src="logo14.jpg" alt="Logo 14" style={{width: '120px', height: '60px', marginRight: '40px'}} />
+              <img src="logo15.jpg" alt="Logo 15" style={{width: '120px', height: '60px', marginRight: '40px'}} />
+              <img src="logo16.jpg" alt="Logo 16" style={{width: '120px', height: '60px', marginRight: '40px'}} />
+              <img src="logo17.jpg" alt="Logo 17" style={{width: '120px', height: '60px', marginRight: '40px'}} />
+              <img src="logo18.jpg" alt="Logo 18" style={{width: '120px', height: '60px', marginRight: '40px'}} />
+              <img src="logo19.jpg" alt="Logo 19" style={{width: '120px', height: '60px', marginRight: '40px'}} />
+              <img src="logo20.jpg" alt="Logo 20" style={{width: '120px', height: '60px', marginRight: '40px'}} />
+            </Marquee>
+          </div>
+        </section>
       </main>
     </div>
   );
