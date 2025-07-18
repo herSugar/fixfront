@@ -160,34 +160,40 @@ const Homepage: React.FC = () => {
         </div>
 
         {/* Client Logo Slider Section */}
-        <section className="py-12 bg-gray-50 -mx-8 px-8 rounded-lg">
+        <section className="flex py-12 bg-gray-50 -mx-8 px-8 rounded-lg">
           <div className="space-y-8">
             {/* First marquee - left to right with 10 logos */}
             <Marquee speed={50}>
-              <img src="logo1.jpg" alt="Logo 1" style={{width: '120px', height: '60px', marginRight: '40px'}} />
-              <img src="logo2.jpg" alt="Logo 2" style={{width: '120px', height: '60px', marginRight: '40px'}} />
-              <img src="logo3.jpg" alt="Logo 3" style={{width: '120px', height: '60px', marginRight: '40px'}} />
-              <img src="logo4.jpg" alt="Logo 4" style={{width: '120px', height: '60px', marginRight: '40px'}} />
-              <img src="logo5.jpg" alt="Logo 5" style={{width: '120px', height: '60px', marginRight: '40px'}} />
-              <img src="logo6.jpg" alt="Logo 6" style={{width: '120px', height: '60px', marginRight: '40px'}} />
-              <img src="logo7.jpg" alt="Logo 7" style={{width: '120px', height: '60px', marginRight: '40px'}} />
-              <img src="logo8.jpg" alt="Logo 8" style={{width: '120px', height: '60px', marginRight: '40px'}} />
-              <img src="logo9.jpg" alt="Logo 9" style={{width: '120px', height: '60px', marginRight: '40px'}} />
-              <img src="logo10.jpg" alt="Logo 10" style={{width: '120px', height: '60px', marginRight: '40px'}} />
+              <img src="src/assets/img/Logo Client Fix Indonesia/Logo Client Fix Indonesia_AtoZ.png" alt="Logo 1" style={{width: '150px', height: '150px', marginRight: '40px'}} />
+              <img src="src/assets/img/Logo Client Fix Indonesia/Logo Client Fix Indonesia_Bank Indonesia.png" alt="Logo 2" style={{width: '150px', height: '150px', marginRight: '40px'}} />
+              <img src="src/assets/img/Logo Client Fix Indonesia/Logo Client Fix Indonesia_Bank Mandiri.png" alt="Logo 3" style={{width: '150px', height: '150px', marginRight: '40px'}} />
+              <img src="src/assets/img/Logo Client Fix Indonesia/Logo Client Fix Indonesia_BNI46.png" alt="Logo 4" style={{width: '150px', height: '150px', marginRight: '40px'}} />
+              <img src="src/assets/img/Logo Client Fix Indonesia/Logo Client Fix Indonesia_BNPB.png" alt="Logo 5" style={{width: '150px', height: '150px', marginRight: '40px'}} />
+              <img src="src/assets/img/Logo Client Fix Indonesia/Logo Client Fix Indonesia_Crea.png" alt="Logo 6" style={{width: '150px', height: '150px', marginRight: '40px'}} />
+              <img src="src/assets/img/Logo Client Fix Indonesia/Logo Client Fix Indonesia_DCI Indonesia.png" alt="Logo 7" style={{width: '150px', height: '150px', marginRight: '40px'}} />
+              <img src="src/assets/img/Logo Client Fix Indonesia/Logo Client Fix Indonesia_Edge.png" alt="Logo 8" style={{width: '150px', height: '150px', marginRight: '40px'}} />
+              <img src="src/assets/img/Logo Client Fix Indonesia/Logo Client Fix Indonesia_Estetika dr Affandi.png" alt="Logo 9" style={{width: '150px', height: '150px', marginRight: '40px'}} />
+              <img src="src/assets/img/Logo Client Fix Indonesia/Logo Client Fix Indonesia_Foodmart.png" alt="Logo 10" style={{width: '150px', height: '150px', marginRight: '40px'}} />
+              <img src="src/assets/img/Logo Client Fix Indonesia/Logo Client Fix Indonesia_Fortress Data Services.png" alt="Logo 10" style={{width: '150px', height: '150px', marginRight: '40px'}} />
+              <img src="src/assets/img/Logo Client Fix Indonesia/Logo Client Fix Indonesia_IMAJI.png" alt="Logo 10" style={{width: '150px', height: '150px', marginRight: '40px'}} />
+              <img src="src/assets/img/Logo Client Fix Indonesia/Logo Client Fix Indonesia_Indonet.png" alt="Logo 10" style={{width: '150px', height: '150px', marginRight: '40px'}} />
             </Marquee>
             
             {/* Second marquee - right to left with 10 logos */}
             <Marquee direction="right" speed={30} pauseOnHover={true}>
-              <img src="logo11.jpg" alt="Logo 11" style={{width: '120px', height: '60px', marginRight: '40px'}} />
-              <img src="logo12.jpg" alt="Logo 12" style={{width: '120px', height: '60px', marginRight: '40px'}} />
-              <img src="logo13.jpg" alt="Logo 13" style={{width: '120px', height: '60px', marginRight: '40px'}} />
-              <img src="logo14.jpg" alt="Logo 14" style={{width: '120px', height: '60px', marginRight: '40px'}} />
-              <img src="logo15.jpg" alt="Logo 15" style={{width: '120px', height: '60px', marginRight: '40px'}} />
-              <img src="logo16.jpg" alt="Logo 16" style={{width: '120px', height: '60px', marginRight: '40px'}} />
-              <img src="logo17.jpg" alt="Logo 17" style={{width: '120px', height: '60px', marginRight: '40px'}} />
-              <img src="logo18.jpg" alt="Logo 18" style={{width: '120px', height: '60px', marginRight: '40px'}} />
-              <img src="logo19.jpg" alt="Logo 19" style={{width: '120px', height: '60px', marginRight: '40px'}} />
-              <img src="logo20.jpg" alt="Logo 20" style={{width: '120px', height: '60px', marginRight: '40px'}} />
+              <img src="src/assets/img/Logo Client Fix Indonesia/Logo Client Fix Indonesia_Injourney Airports.png" alt="Logo 11" style={{width: '150px', height: '150px', marginRight: '40px'}} />
+              <img src="src/assets/img/Logo Client Fix Indonesia/Logo Client Fix Indonesia_Kemenkes.png" alt="Logo 12" style={{width: '150px', height: '150px', marginRight: '40px'}} />
+              <img src="src/assets/img/Logo Client Fix Indonesia/Logo Client Fix Indonesia_KPK.png" alt="Logo 13" style={{width: '150px', height: '150px', marginRight: '40px'}} />
+              <img src="src/assets/img/Logo Client Fix Indonesia/Logo Client Fix Indonesia_Lippo Plaza Sunset.png" alt="Logo 14" style={{width: '150px', height: '150px', marginRight: '40px'}} />
+              <img src="src/assets/img/Logo Client Fix Indonesia/Logo Client Fix Indonesia_Pegadaian.png" alt="Logo 15" style={{width: '150px', height: '150px', marginRight: '40px'}} />
+              <img src="src/assets/img/Logo Client Fix Indonesia/Logo Client Fix Indonesia_PLN.png" alt="Logo 16" style={{width: '150px', height: '150px', marginRight: '40px'}} />
+              <img src="src/assets/img/Logo Client Fix Indonesia/Logo Client Fix Indonesia_PM.png" alt="Logo 17" style={{width: '150px', height: '150px', marginRight: '40px'}} />
+              <img src="src/assets/img/Logo Client Fix Indonesia/Logo Client Fix Indonesia_Sampoerna.png" alt="Logo 10" style={{width: '150px', height: '150px', marginRight: '40px'}} />
+              <img src="src/assets/img/Logo Client Fix Indonesia/Logo Client Fix Indonesia_Samrtfren.png" alt="Logo 10" style={{width: '150px', height: '150px', marginRight: '40px'}} />
+              <img src="src/assets/img/Logo Client Fix Indonesia/Logo Client Fix Indonesia_Sisnet.png" alt="Logo 10" style={{width: '150px', height: '150px', marginRight: '40px'}} />
+              <img src="src/assets/img/Logo Client Fix Indonesia/Logo Client Fix Indonesia_Vasaka - Bali.png" alt="Logo 10" style={{width: '150px', height: '150px', marginRight: '40px'}} />
+              <img src="src/assets/img/Logo Client Fix Indonesia/Logo Client Fix Indonesia_Waskita.png" alt="Logo 10" style={{width: '150px', height: '150px', marginRight: '40px'}} />
+              <img src="src/assets/img/Logo Client Fix Indonesia/Logo Client Fix Indonesia_01.png" alt="Logo 10" style={{width: '150px', height: '150px', marginRight: '40px'}} />
             </Marquee>
           </div>
         </section>
