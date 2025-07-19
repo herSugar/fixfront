@@ -359,7 +359,7 @@ const Homepage: React.FC = () => {
             <div className="max-w-2xl mx-auto bg-white border border-gray-200 rounded-xl p-8 shadow-lg">
               <form ref={formRef} onSubmit={handleSubmit}>
                 <div className="mb-6">
-                  <label htmlFor="name" className="block text-gray-700 mb-2 font-medium">
+                  <label htmlFor="name" className="text-left block text-gray-700 mb-2 font-medium">
                     Name
                   </label>
                   <div className="relative">
@@ -377,7 +377,7 @@ const Homepage: React.FC = () => {
                 </div>
 
                 <div className="mb-6">
-                  <label htmlFor="email" className="block text-gray-700 mb-2 font-medium">
+                  <label htmlFor="email" className="text-left block text-gray-700 mb-2 font-medium">
                     Email
                   </label>
                   <div className="relative">
@@ -395,7 +395,7 @@ const Homepage: React.FC = () => {
                 </div>
 
                 <div className="mb-6">
-                  <label htmlFor="message" className="block text-gray-700 mb-2 font-medium">
+                  <label htmlFor="message" className="text-left block text-gray-700 mb-2 font-medium">
                     Message
                   </label>
                   <textarea
