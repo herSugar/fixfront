@@ -3,6 +3,52 @@ import Marquee from 'react-fast-marquee';
 import { FiUser, FiMail, FiSend } from 'react-icons/fi';
 import CountUp from 'react-countup';
 
+// Simple FadeInSection component for fade-in animation
+const FadeInSection: React.FC<{
+  children: React.ReactNode;
+  direction?: 'left' | 'right';
+  delay?: number;
+}> = ({ children, direction = 'up', delay = 0 }) => {
+  const [isVisible, setIsVisible] = React.useState(false);
+  const domRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => setIsVisible(entry.isIntersecting));
+      },
+      { threshold: 0.1 }
+    );
+    if (domRef.current) observer.observe(domRef.current);
+    return () => {
+      if (domRef.current) observer.unobserve(domRef.current);
+    };
+  }, []);
+
+  let translateClass = '';
+  if (direction === 'left') translateClass = 'translate-x-[-40px]';
+  else if (direction === 'right') translateClass = 'translate-x-[40px]';
+  else translateClass = 'translate-y-[40px]';
+
+  return (
+    <div
+      ref={domRef}
+      style={{
+        transition: 'opacity 0.6s ease, transform 0.6s ease',
+        transitionDelay: `${delay}ms`,
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'none' : (direction === 'left'
+          ? 'translateX(-40px)'
+          : direction === 'right'
+          ? 'translateX(40px)'
+          : 'translateY(40px)')
+      }}
+    >
+      {children}
+    </div>
+  );
+};
+
 const Homepage: React.FC = () => {
   const formRef = React.useRef<HTMLFormElement>(null);
   
@@ -61,7 +107,7 @@ const Homepage: React.FC = () => {
           <div className="flex-shrink-0">
             <div className="w-16 h-16 flex items-center justify-center">
               <img 
-                src="src/images/Fix Indonesia - Logo_Logo - Main - Red.png"
+                src="img/FixIndonesiaLogo.png"
                 alt="Company Logo"
                 className="w-full h-full object-contain"
               />
@@ -156,7 +202,7 @@ const Homepage: React.FC = () => {
                 />
               </div>
               <div className="absolute top-4 left-4">
-                <span className="bg-gray-600 text-white px-3 py-1 rounded text-sm font-medium">J</span>
+                <span className="bg-gray-600 text-white px-3 py-1 rounded text-sm font-medium">I</span>
               </div>
               <div className="absolute bottom-4 left-4">
                 <button className="bg-red-600 text-white px-4 py-2 rounded font-medium hover:bg-red-700 transition-colors">
@@ -205,99 +251,114 @@ const Homepage: React.FC = () => {
           </div>
         </div>
 
-{/* About Section */}
+        {/* About Section */}
         <section id="about" className="py-16 w-full mb-16">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-              About <span className="text-red-600">Us</span>
-            </h2>
+            <FadeInSection>
+              <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+                About <span className="text-red-600">Us</span>
+              </h2>
+            </FadeInSection>
             
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-gray-900">
-                  Creating Unforgettable Experiences Since 2010
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  We are a premier event planning company dedicated to bringing your vision to life. 
-                  With over a decade of experience in the industry, we specialize in creating memorable 
-                  events that exceed expectations and leave lasting impressions.
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  From corporate gatherings to intimate celebrations, our team of creative professionals 
-                  handles every detail with precision and care. We believe that every event tells a story, 
-                  and we're here to help you tell yours in the most spectacular way possible.
-                </p>
-                
-                <div className="grid grid-cols-2 gap-6 pt-6">
-                  <div className="text-center">
-                    <CountUp 
-                      end={500} 
-                      suffix="+" 
-                      className="text-3xl font-bold text-red-600 mb-2"
-                      duration={10}
-                    />
-                    <div className="text-gray-600 font-medium">Events Completed</div>
-                  </div>
-                  <div className="text-center">
-                    <CountUp 
-                      end={50} 
-                      suffix="+" 
-                      className="text-3xl font-bold text-red-600 mb-2"
-                      duration={5}
-                    />
-                    <div className="text-gray-600 font-medium">Happy Clients</div>
-                  </div>
-                  <div className="text-center">
-                    <CountUp 
-                      end={10} 
-                      suffix="+" 
-                      className="text-3xl font-bold text-red-600 mb-2"
-                      duration={1}
-                    />
-                    <div className="text-gray-600 font-medium">Years Experience</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-red-600 mb-2">24/7</div>
-                    <div className="text-gray-600 font-medium">Support</div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="space-y-6">
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h4 className="text-xl font-semibold text-gray-900 mb-4">Our Mission</h4>
-                  <p className="text-gray-600">
-                    To transform ordinary moments into extraordinary memories through innovative 
-                    event planning, impeccable execution, and personalized service that reflects 
-                    each client's unique vision and style.
+              <FadeInSection direction="left" delay={200}>
+                <div className="space-y-6">
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    Creating Unforgettable Experiences Since 2010
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    We are a premier event planning company dedicated to bringing your vision to life. 
+                    With over a decade of experience in the industry, we specialize in creating memorable 
+                    events that exceed expectations and leave lasting impressions.
                   </p>
+                  <p className="text-gray-600 leading-relaxed">
+                    From corporate gatherings to intimate celebrations, our team of creative professionals 
+                    handles every detail with precision and care. We believe that every event tells a story, 
+                    and we're here to help you tell yours in the most spectacular way possible.
+                  </p>
+                  
+                  <div className="grid grid-cols-2 gap-6 pt-6">
+                    <FadeInSection delay={600}>
+                      <div className="text-center">
+                        <CountUp 
+                          end={500} 
+                          suffix="+" 
+                          className="text-3xl font-bold text-red-600 mb-2"
+                          duration={10}
+                        />
+                        <div className="text-gray-600 font-medium">Events Completed</div>
+                      </div>
+                    </FadeInSection>
+                    <FadeInSection delay={700}>
+                      <div className="text-center">
+                        <CountUp 
+                          end={50} 
+                          suffix="+" 
+                          className="text-3xl font-bold text-red-600 mb-2"
+                          duration={5}
+                        />
+                        <div className="text-gray-600 font-medium">Happy Clients</div>
+                      </div>
+                    </FadeInSection>
+                    <FadeInSection delay={800}>
+                      <div className="text-center">
+                        <CountUp 
+                          end={10} 
+                          suffix="+" 
+                          className="text-3xl font-bold text-red-600 mb-2"
+                          duration={5}
+                        />
+                        <div className="text-gray-600 font-medium">Years Experience</div>
+                      </div>
+                    </FadeInSection>
+                    <FadeInSection delay={900}>
+                      <div className="text-center">
+                        <div className="text-3xl font-bold text-red-600 mb-2">24/7</div>
+                        <div className="text-gray-600 font-medium">Support</div>
+                      </div>
+                    </FadeInSection>
+                  </div>
                 </div>
-                
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h4 className="text-xl font-semibold text-gray-900 mb-4">Why Choose Us?</h4>
-                  <ul className="space-y-2 text-gray-600">
-                    <li className="flex items-center">
-                      <span className="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
-                      Professional team with extensive experience
-                    </li>
-                    <li className="flex items-center">
-                      <span className="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
-                      Customized solutions for every budget
-                    </li>
-                    <li className="flex items-center">
-                      <span className="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
-                      End-to-end event management
-                    </li>
-                    <li className="flex items-center">
-                      <span className="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
-                      Attention to every detail
-                    </li>
-                  </ul>
+              </FadeInSection>
+              
+              <FadeInSection direction="right" delay={400}>
+                <div className="space-y-6">
+                  <div className="bg-gray-50 p-6 rounded-lg">
+                    <h4 className="text-xl font-semibold text-gray-900 mb-4">Our Mission</h4>
+                    <p className="text-gray-600">
+                      To transform ordinary moments into extraordinary memories through innovative 
+                      event planning, impeccable execution, and personalized service that reflects 
+                      each client's unique vision and style.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-gray-50 p-6 rounded-lg">
+                    <h4 className="text-xl font-semibold text-gray-900 mb-4">Why Choose Us?</h4>
+                    <ul className="space-y-2 text-gray-600">
+                      <li className="flex items-center">
+                        <span className="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
+                        Professional team with extensive experience
+                      </li>
+                      <li className="flex items-center">
+                        <span className="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
+                        Customized solutions for every budget
+                      </li>
+                      <li className="flex items-center">
+                        <span className="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
+                        End-to-end event management
+                      </li>
+                      <li className="flex items-center">
+                        <span className="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
+                        Attention to every detail
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
+              </FadeInSection>
             </div>
           </div>
         </section>
+
 
         {/* Red CTA Section */}
         <div className="bg-red-600 text-white p-8 rounded-lg text-center w-full mb-16">
