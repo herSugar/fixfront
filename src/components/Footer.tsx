@@ -10,6 +10,7 @@ import {
   FiClock,
   FiArrowUp
 } from 'react-icons/fi';
+import ServicesPage from './ServicesPage';
 
 const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -77,7 +78,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-3">
               {[
                 { name: 'About Us', href: '#about' },
-                { name: 'Our Services', href: '#services-products' },
+                { name: 'Our Services', href: '/ServicePage' },
                 { name: 'Portfolio', href: '#portfolio' },
                 { name: 'Clients', href: '#clients' },
                 { name: 'Contact', href: '#contact' },
@@ -219,7 +220,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-center md:text-left">
               <p className="text-gray-400 text-sm">
-                © {currentYear} Professional Event Planner. All rights reserved.
+                © {currentYear} Fix Indonesia. All rights reserved.
               </p>
               <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-2">
                 <a href="#" className="text-gray-400 hover:text-white text-xs transition-colors">

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Marquee from 'react-fast-marquee';
 import { FiUser, FiMail, FiSend } from 'react-icons/fi';
 import CountUp from 'react-countup';
+import Header from './Header';
 import Footer from './Footer';
 
 // Define props for FadeInSection component
@@ -57,27 +58,6 @@ const FadeInSection: React.FC<FadeInSectionProps> = ({
 
 const Homepage: React.FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [isVisible, setIsVisible] = useState(true);
-
-  const rotatingWords = [
-    'PROFESSIONAL',
-    'CREATIVE',
-    'INNOVATIVE',
-    'EXCEPTIONAL',
-    'MEMORABLE',
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsVisible(false);
-      setTimeout(() => {
-        setCurrentWordIndex((prev) => (prev + 1) % rotatingWords.length);
-        setIsVisible(true);
-      }, 300);
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -86,64 +66,8 @@ const Homepage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white w-full">
-      {/* Header - Full width with proper padding */}
-      <header className="bg-white w-full px-4 sm:px-6 lg:px-12 xl:px-16 py-6">
-        <div className="flex flex-col sm:flex-row justify-between items-start w-full max-w-none">
-          {/* Logo and Title */}
-          <div className="flex-1 text-left mb-4 sm:mb-0">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black leading-tight">
-              <span
-                className={`inline-block transition-all duration-300 ${
-                  isVisible
-                    ? 'opacity-100 transform translate-y-0'
-                    : 'opacity-0 transform -translate-y-2'
-                }`}
-                style={{ color: '#dc2626' }}
-              >
-                {rotatingWords[currentWordIndex]}
-              </span>
-              <br />
-              EVENT PLANNER
-            </h1>
-          </div>
-
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <div className="w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center">
-              <img
-                src="/img/FixIndonesiaLogo.png"
-                alt="Company Logo"
-                className="w-full h-full object-contain"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Navigation */}
-        <nav className="mt-6 w-full">
-          <ul className="flex flex-wrap gap-x-4 sm:gap-x-6 lg:gap-x-8 gap-y-2 text-black font-medium text-sm sm:text-base">
-            {[
-              'About',
-              'Contact',
-              'Clients',
-              'Portfolio',
-              'Social Media',
-              'Services & Products',
-            ].map((item) => (
-              <li key={item}>
-                <a
-                  href={`#${item.toLowerCase().replace(' & ', '-')}`}
-                  className="relative group hover:text-red-600 transition-colors py-2"
-                >
-                  <span className="absolute top-0 left-0 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-300"></span>
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-300"></span>
-                  {item}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </header>
+      {/* Header - Imported from separate component */}
+      <Header />
 
       {/* Main Content - Full width */}
       <main className="w-full">
