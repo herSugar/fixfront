@@ -1,7 +1,7 @@
 // import { useState } from 'react'
 // import React from 'react'
 import Homepage from './components/HomePage'
-import './App.css'
+import './index.css'
 
 function App() {
   return (
