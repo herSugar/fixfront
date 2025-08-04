@@ -18,8 +18,8 @@ const Header: React.FC = () => {
   // Navigation items with their routes
   const navigationItems = [
     { name: 'About', path: '/', section: 'about' },
-    { name: 'Contact', path: '/', section: 'contact' },
     { name: 'Clients', path: '/', section: 'clients' },
+    { name: 'Contact', path: '/', section: 'contact' },
     { name: 'Portfolio', path: '/portfolio' },
     { name: 'Services & Products', path: '/services' },
   ];

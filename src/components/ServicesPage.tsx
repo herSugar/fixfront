@@ -14,6 +14,7 @@ import {
   FiMapPin
 } from 'react-icons/fi';
 import Footer from './Footer';
+import Header from './Header';
 
 // Define props for FadeInSection component
 interface FadeInSectionProps {
@@ -165,46 +166,7 @@ const ServicesPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white w-full">
-      {/* Header */}
-      <header className="bg-white w-full px-4 sm:px-6 lg:px-12 xl:px-16 py-6 border-b">
-        <div className="flex flex-col sm:flex-row justify-between items-start w-full">
-          <div className="flex-1 text-left mb-4 sm:mb-0">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black leading-tight">
-              <span className="text-red-600">PRODUCTS</span> &<br />
-              <span className="text-black">SERVICES</span>
-            </h1>
-          </div>
-          <div className="flex-shrink-0">
-            <div className="w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center">
-              <img
-                src="/img/FixIndonesiaLogo.png"
-                alt="Company Logo"
-                className="w-full h-full object-contain"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Navigation */}
-        <nav className="mt-6 w-full">
-          <ul className="flex flex-wrap gap-x-4 sm:gap-x-6 lg:gap-x-8 gap-y-2 text-black font-medium text-sm sm:text-base">
-            {['Home', 'About', 'Contact', 'Clients', 'Portfolio', 'Services & Products'].map((item) => (
-              <li key={item}>
-                <a
-                  href={item === 'Home' ? '/' : `#${item.toLowerCase().replace(' & ', '-')}`}
-                  className={`relative group transition-colors py-2 ${
-                    item === 'Services & Products' ? 'text-red-600' : 'hover:text-red-600'
-                  }`}
-                >
-                  <span className="absolute top-0 left-0 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-300"></span>
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-300"></span>
-                  {item}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </header>
+      <Header />
 
       {/* Main Content */}
       <main className="w-full">

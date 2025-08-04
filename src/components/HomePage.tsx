@@ -241,7 +241,7 @@ const Homepage: React.FC = () => {
         </section>
 
         {/* Client Logo Slider Section - Full width, no padding */}
-        <section className="py-12 bg-white w-full">
+        <section className="py-12 bg-white w-full" id="clients">
           <div className="space-y-8 w-full">
             <Marquee speed={50}>
               {[
