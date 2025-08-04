@@ -10,7 +10,7 @@ import {
   FiClock,
   FiArrowUp
 } from 'react-icons/fi';
-import ServicesPage from './ServicesPage';
+// import ServicesPage from './ServicesPage';
 
 const Footer: React.FC = () => {
   const scrollToTop = () => {

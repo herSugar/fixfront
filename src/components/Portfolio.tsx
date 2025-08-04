@@ -3,7 +3,7 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import { div } from 'framer-motion/client';
+// import { div } from 'framer-motion/client';
 
 // Definisi tipe untuk data event
 interface Event {

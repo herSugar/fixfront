@@ -69,7 +69,7 @@ const FadeInSection: React.FC<FadeInSectionProps> = ({
 
 const ServicesPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState('services');
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [, setHoveredCard] = useState<number | null>(null);
 
   const services = [
     {
